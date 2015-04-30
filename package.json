@@ -1,0 +1,38 @@
+{
+  "name": "doge",
+  "version": "1.0.0",
+  "description": "doge framework",
+  "main": "lib/doge/index.js",
+  "scripts": {
+    "test": "script/test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pagarme/doge.git"
+  },
+  "keywords": [
+    "framework",
+    "rails"
+  ],
+  "author": "Pagar.me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pagarme/doge/issues"
+  },
+  "homepage": "https://github.com/pagarme/doge",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "body-parser": "^1.12.3",
+    "commander": "^2.8.1",
+    "dogeon": "^1.0.0",
+    "dson-middleware": "0.0.5",
+    "express": "^4.12.3",
+    "include-path": "^0.4.7",
+    "inflected": "^1.1.6",
+    "joi": "^6.4.1",
+    "lodash": "^3.7.0",
+    "method-override": "^2.3.2",
+    "methods": "^1.1.1",
+    "tsort": "0.0.1"
+  }
+}
