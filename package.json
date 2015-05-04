@@ -4,7 +4,8 @@
   "description": "doge framework",
   "main": "lib/doge/index.js",
   "scripts": {
-    "test": "script/test.sh"
+    "test": "script/test.sh",
+	"postinstall": "script/install.sh"
   },
   "repository": {
     "type": "git",
