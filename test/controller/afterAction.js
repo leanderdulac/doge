@@ -4,8 +4,8 @@ var expect = require('chai').expect;
 
 var Controller = require('../../lib/doge/controller.js');
 
-describe('Controller#skipBeforeAction', function() {
-	it('hook is skipped and before action is not called', function() {
+describe('Controller#afterAction', function() {
+	it('hook is called after action', function() {
 
 		var req = {
 			method: 'GET',
@@ -37,18 +37,17 @@ describe('Controller#skipBeforeAction', function() {
 
 		var TestController = new Class('TestController', Controller, function() {
 			
-			this.beforeAction('testHookBeforeAction');
-
-			this.skipBeforeAction('testHookBeforeAction');
+			this.afterAction('testHookAfterAction');
 			
 			this.$.index = function () {
+				this.called = true;
 				return {
 					name: 'Test'
 				};
 			};
 
-			this.$.testHookBeforeAction = function () {
-				this.called = true;
+			this.$.testHookAfterAction = function () {
+				this.called = false;
 			};
 		});
 		
@@ -57,7 +56,7 @@ describe('Controller#skipBeforeAction', function() {
 		return ctrl.call(req, res, next)
 		.then(function(){
 			expect(res.status).to.be.eql(200);
-			expect(ctrl.called).to.exist;
+			expect(ctrl.called).to.be.false;
 			expect(res.body.name).to.be.eql('Test');
 		});
 	});
