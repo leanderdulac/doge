@@ -27,6 +27,12 @@ var TestClass = Class('TestClass', function() {
 	});
 });
 
+var TestSubclass = Class('TestSubclass', TestClass, function() {
+	this.initializer('sub', { before: 'c', after: 'b' }, function() {
+		this.sub = this.counter++;
+	});
+});
+
 describe('Initializable#runInitializers', function() {
 	it('runs initializers in the correct order', function() {
 		var test = new TestClass();
@@ -45,6 +51,18 @@ describe('Initializable#runInitializers', function() {
 		return test.runInitializers('lol')
 		.then(function() {
 			expect(test.arg).to.be.equal('lol');
+		});
+	});
+
+	it('should account parent classes initializers', function() {
+		var test = new TestSubclass();
+
+		return test.runInitializers()
+		.then(function() {
+			expect(test.a).to.be.equal(0);
+			expect(test.b).to.be.equal(1);
+			expect(test.sub).to.be.equal(2);
+			expect(test.c).to.be.equal(3);
 		});
 	});
 });
