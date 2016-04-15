@@ -6,7 +6,7 @@ Doge
 Node web framework loosely based on Ruby on Rails. Batteries sold apart.
 Focused on RESTful APIs without views.
 
-This is a work in progress.
+## This is just an experiment. Please don't use this in production.
 
 License
 =======
