@@ -42,5 +42,5 @@ describe('Middlewares#Logger', function(){
 		});
 
 	});
-	
+
 });
