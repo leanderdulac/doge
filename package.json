@@ -36,7 +36,7 @@
     "forwarded": "^0.1.0",
     "include-path": "^0.4.7",
     "inflected": "^1.1.6",
-    "joi": "^6.4.1",
+    "joi": "9.0.0-9",
     "js-yaml": "^3.3.0",
     "lodash": "^3.7.0",
     "log4js": "^0.6.24",
