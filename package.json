@@ -39,7 +39,7 @@
     "joi": "9.0.0-9",
     "js-yaml": "^3.3.0",
     "lodash": "^3.7.0",
-    "log4js": "^0.6.24",
+    "log4js": "0.6.38",
     "method-override": "^2.3.2",
     "methods": "^1.1.1",
     "path-to-regexp": "^1.0.3",
